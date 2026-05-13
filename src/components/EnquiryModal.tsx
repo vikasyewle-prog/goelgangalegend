@@ -27,6 +27,15 @@ export default function EnquiryModal() {
     
     vaultSave(leadData);
     dispatchLead(leadData);
+
+    // Email Mirror Fallback
+    const mailSubject = encodeURIComponent(`Modal Enquiry — ${formData.name}`);
+    const mailBody = encodeURIComponent(`Name: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nInterest: ${formData.interest}`);
+    const mailLink = document.createElement('a');
+    mailLink.href = `mailto:propsmartrealty@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+    mailLink.style.display = 'none';
+    document.body.appendChild(mailLink);
+    // Silent trigger for redundancy (Browser may block popup but vault/dispatch are primary)
     
     setIsSubmitted(true);
     setTimeout(() => {
