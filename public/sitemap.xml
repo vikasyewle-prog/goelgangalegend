@@ -1,77 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- Main Page -->
   <url>
     <loc>https://goelgangalegend.com/</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://goelgangalegend.com/hero-aerial.png</image:loc>
+      <image:title>Goel Ganga Legend County - 30-Acre Sports Township in Bavdhan Pune</image:title>
+    </image:image>
   </url>
 
   <!-- Programmatic Silo Pages -->
   <url>
     <loc>https://goelgangalegend.com/3bhk-flats-bavdhan</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://goelgangalegend.com/floorplan-3bhk.png</image:loc>
+      <image:title>Luxury 3 BHK Floor Plan - Goel Ganga Legend County</image:title>
+    </image:image>
   </url>
+
   <url>
     <loc>https://goelgangalegend.com/2bhk-flats-bavdhan-pune</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://goelgangalegend.com/luxury-projects-bavdhan</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://goelgangalegend.com/investment-flats-bavdhan-pune</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://goelgangalegend.com/sports-township-pune</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://goelgangalegend.com/gallery-football.png</image:loc>
+      <image:title>International Sports Arena at Legend County</image:title>
+    </image:image>
   </url>
+
   <url>
     <loc>https://goelgangalegend.com/luxury-apartments-chandni-chowk</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://goelgangalegend.com/michael-phelps-swimming-pune</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://goelgangalegend.com/amenities-pool.png</image:loc>
+      <image:title>Michael Phelps Swimming Academy at Legend County</image:title>
+    </image:image>
   </url>
+
   <url>
     <loc>https://goelgangalegend.com/tagda-raho-dhoni-pune</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://goelgangalegend.com/3.5-bhk-flats-bavdhan</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://goelgangalegend.com/floorplan-3.5bhk.png</image:loc>
+      <image:title>3.5 BHK Floor Plan with Extra Study - Legend County</image:title>
+    </image:image>
   </url>
+
   <url>
     <loc>https://goelgangalegend.com/schools-hospitals-near-bavdhan</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://goelgangalegend.com/rera-legal-compliance-bavdhan</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
