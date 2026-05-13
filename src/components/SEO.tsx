@@ -10,7 +10,7 @@ interface SEOProps {
 }
 
 export default function SEO({ title, description, keywords, canonical, image, faq }: SEOProps) {
-  const siteUrl = 'https://goelgangalegendcounty.com';
+  const siteUrl = 'https://goelgangalegend.com';
   const fullCanonical = canonical ? `${siteUrl}${canonical}` : siteUrl;
   const ogImage = image || `${siteUrl}/hero-aerial.png`;
 

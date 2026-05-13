@@ -372,6 +372,25 @@ input, textarea, select {
   100% { background-position: 0% 50%; }
 }
 
+.pulse-stadium {
+  position: relative;
+}
+
+.pulse-stadium::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 1px solid var(--accent);
+  border-radius: inherit;
+  animation: stadium-glow 2s infinite;
+  opacity: 0;
+}
+
+@keyframes stadium-glow {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.1); opacity: 0; }
+}
+
 /* ─── Responsive Grid Helper ─── */
 .grid-auto {
   display: grid;
