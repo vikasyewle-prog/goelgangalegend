@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /dist/
+
+# Crawl-delay for aggressive bots
+Crawl-delay: 10
+
+Sitemap: https://goelgangalegendcounty.com/sitemap.xml
