@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Send, Phone, CheckCircle2 } from 'lucide-react';
+import { X, Send, CheckCircle2 } from 'lucide-react';
 import BrandLogo from './BrandLogo';
 import { vaultSave, getUtmParams, dispatchLead } from './ConversionEngine';
 

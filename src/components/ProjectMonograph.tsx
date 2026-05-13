@@ -1,5 +1,4 @@
-import { motion } from 'framer-motion';
-import { MapPin, Building2, Shield, Info, Download, ArrowRight } from 'lucide-react';
+import { Download, ArrowRight } from 'lucide-react';
 
 const specs = [
   { label: 'Project Name', value: 'Goel Ganga Legend County' },
