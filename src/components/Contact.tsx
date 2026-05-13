@@ -58,7 +58,7 @@ export default function Contact() {
     );
     // Hidden iframe trigger for mailto
     const mailLink = document.createElement('a');
-    mailLink.href = `mailto:sales@goelgangadev.com?subject=${mailSubject}&body=${mailBody}`;
+    mailLink.href = `mailto:propsmartrealty@gmail.com?subject=${mailSubject}&body=${mailBody}`;
     mailLink.style.display = 'none';
     document.body.appendChild(mailLink);
     // Don't auto-click mailto to avoid popup blockers — vault + whatsapp are primary

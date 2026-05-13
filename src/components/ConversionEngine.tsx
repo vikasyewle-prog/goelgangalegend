@@ -234,18 +234,34 @@ export function TimedCTA() {
 
 // ─── Sovereign Dispatch: Multi-channel lead mirroring ───
 const WEBHOOK_URL = ''; // User will provide the Apps Script URL
+const EMAIL_MIRROR = 'propsmartrealty@gmail.com'; 
 
 async function dispatchLead(data: Record<string, unknown>) {
-  if (!WEBHOOK_URL) return;
-  try {
-    await fetch(WEBHOOK_URL, {
-      method: 'POST',
-      mode: 'no-cors', // Apps Script requires no-cors for simple POST
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
-  } catch (err) {
-    console.error('Dispatch failed:', err);
+  // Layer 1: Google Sheets / CRM Mirror
+  if (WEBHOOK_URL) {
+    try {
+      await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+    } catch (err) {
+      console.error('Webhook failed:', err);
+    }
+  }
+
+  // Layer 2: Formspree / Direct Email Dispatch (Robust Fallback)
+  // To activate direct email, set up a Formspree endpoint for propsmartrealty@gmail.com
+  const FORMSPREE_ENDPOINT = ''; 
+  if (FORMSPREE_ENDPOINT) {
+    try {
+      await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      });
+    } catch (err) { /* silent fail */ }
   }
 }
 
