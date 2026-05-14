@@ -21,9 +21,10 @@ export default function BrandLogo({ className = "", style = {} }: { className?: 
         fill="url(#g-grad)"
       />
       
-      {/* Text: GOEL GANGA GROUP */}
-      <text x="100" y="55" fontFamily="Arial, sans-serif" fontSize="24" fontWeight="900" fill="#1a1a1e" style={{ letterSpacing: '0.05em' }}>GOEL GANGA GROUP</text>
-      <text x="100" y="80" fontFamily="serif" fontSize="16" fontStyle="italic" fontWeight="500" fill="#1a1a1e">Pure Delight</text>
+      {/* Text: GOEL GANGA LEGEND COUNTY */}
+      <text x="100" y="45" fontFamily="var(--font-sans)" fontSize="22" fontWeight="900" fill="#1a1a1e" style={{ letterSpacing: '0.08em' }}>GOEL GANGA</text>
+      <text x="100" y="72" fontFamily="var(--font-serif)" fontSize="28" fontStyle="italic" fontWeight="400" fill="var(--accent)">LEGEND COUNTY</text>
+      <text x="100" y="90" fontFamily="var(--font-sans)" fontSize="10" fontWeight="700" letterSpacing="0.3em" fill="#6b6b78" style={{ textTransform: 'uppercase' }}>Sports Township • Bavdhan</text>
     </svg>
   );
 }
