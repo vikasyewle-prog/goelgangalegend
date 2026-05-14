@@ -252,7 +252,7 @@ export function TimedCTA() {
 }
 
 // ─── Sovereign Dispatch: Multi-channel lead mirroring ───
-const WEBHOOK_URL = ''; // User will provide the Apps Script URL
+const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbw6XPvedb5SJuntye_JigTHi__prnk_jWrHEWdzxrFwCx0rZwZ9jKgsKJ2K7XSxmGYZ/exec'; 
 const EMAIL_MIRROR = 'propsmartrealty@gmail.com'; 
 
 async function dispatchLead(data: Record<string, unknown>) {
