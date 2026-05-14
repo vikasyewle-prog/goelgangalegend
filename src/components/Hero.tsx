@@ -32,11 +32,9 @@ export default function Hero() {
         className="hero-bg"
       >
         <img
-          src="/hero-main.jpg"
-          onError={(e) => {
-            (e.target as HTMLImageElement).src = '/hero-aerial.png';
-          }}
+          src="/hero-aerial.png"
           alt="Goel Ganga Legend County Grand Entrance — Luxury Sports Township in Bavdhan Pune"
+          fetchPriority="high"
           style={{
             width: '100%',
             height: '120%',
