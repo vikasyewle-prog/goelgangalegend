@@ -279,17 +279,24 @@ async function dispatchLead(data: Record<string, unknown>) {
     }
   }
 
-  // Layer 2: Formspree / Direct Email Dispatch (Robust Fallback)
-  // To activate direct email, set up a Formspree endpoint for propsmartrealty@gmail.com
-  const FORMSPREE_ENDPOINT = ''; 
-  if (FORMSPREE_ENDPOINT) {
-    try {
-      await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-        body: JSON.stringify(hardenedData)
-      });
-    } catch (err) { /* silent fail */ }
+  // Layer 2: Formsubmit AJAX Dispatch (100% Background Deliverability)
+  const FORMSUBMIT_ENDPOINT = 'https://formsubmit.co/ajax/propsmartrealty@gmail.com'; 
+  
+  try {
+    await fetch(FORMSUBMIT_ENDPOINT, {
+      method: 'POST',
+      headers: { 
+        'Accept': 'application/json', 
+        'Content-Type': 'application/json' 
+      },
+      body: JSON.stringify({
+        ...hardenedData,
+        _subject: "New High-Intent Lead | Legend County Bavdhan",
+        _template: "table"
+      })
+    });
+  } catch (err) { 
+    console.error('Email dispatch fallback failed:', err);
   }
 }
 
