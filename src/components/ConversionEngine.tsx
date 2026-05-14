@@ -21,15 +21,31 @@ function getUtmParams() {
   };
 }
 
-// ─── Social Proof Toast ───
+// ─── Inventory Alert & Social Proof ───
 export function SocialProofToast() {
   const [visible, setVisible] = useState(false);
+  const [type, setType] = useState<'visitor' | 'inventory'>('visitor');
   const [count] = useState(() => Math.floor(Math.random() * 8) + 5);
 
   useEffect(() => {
-    const timer = setTimeout(() => setVisible(true), 25000);
-    const hide = setTimeout(() => setVisible(false), 32000);
-    return () => { clearTimeout(timer); clearTimeout(hide); };
+    // Visitor Count Alert
+    const timer1 = setTimeout(() => {
+      setType('visitor');
+      setVisible(true);
+    }, 25000);
+    const hide1 = setTimeout(() => setVisible(false), 32000);
+
+    // Inventory Urgency Alert
+    const timer2 = setTimeout(() => {
+      setType('inventory');
+      setVisible(true);
+    }, 60000);
+    const hide2 = setTimeout(() => setVisible(false), 68000);
+
+    return () => { 
+      clearTimeout(timer1); clearTimeout(hide1); 
+      clearTimeout(timer2); clearTimeout(hide2); 
+    };
   }, []);
 
   return (
@@ -43,23 +59,26 @@ export function SocialProofToast() {
           style={{
             position: 'fixed', bottom: 100, left: 20, zIndex: 800,
             padding: '0.85rem 1.25rem', borderRadius: 'var(--radius-md)',
-            background: 'rgba(9,9,11,0.92)', backdropFilter: 'blur(16px)',
+            background: type === 'inventory' ? 'rgba(201, 150, 59, 0.95)' : 'rgba(9,9,11,0.92)', 
+            backdropFilter: 'blur(16px)',
             border: '1px solid var(--border-light)', maxWidth: 280,
             display: 'flex', alignItems: 'center', gap: '0.75rem',
             boxShadow: '0 12px 40px rgba(0,0,0,0.3)',
+            color: type === 'inventory' ? '#000' : '#fff',
           }}
         >
           <div style={{
             width: 8, height: 8, borderRadius: '50%',
-            background: '#25D366', animation: 'pulse-glow 2s infinite',
+            background: type === 'inventory' ? '#fff' : '#25D366', 
+            animation: 'pulse-glow 2s infinite',
             flexShrink: 0,
           }} />
           <div>
-            <div style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--text-white)' }}>
-              {count} people enquired today
+            <div style={{ fontSize: '0.82rem', fontWeight: 700 }}>
+              {type === 'visitor' ? `${count} people enquired today` : 'Inventory Alert'}
             </div>
-            <div style={{ fontSize: '0.7rem', color: 'var(--text-white-muted)' }}>
-              for Legend County, Bavdhan
+            <div style={{ fontSize: '0.7rem', opacity: 0.8 }}>
+              {type === 'visitor' ? 'for Legend County, Bavdhan' : 'Only 4 units left in Building A'}
             </div>
           </div>
         </motion.div>
