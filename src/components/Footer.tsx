@@ -60,6 +60,28 @@ export default function Footer() {
             </p>
           </div>
 
+          {/* Project Silos */}
+          <div>
+            <h4 style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: '1.25rem' }}>Project Silos</h4>
+            <ul style={{ listStyle: 'none', padding: 0 }}>
+              <li style={{ marginBottom: '0.75rem' }}><a href="/3bhk-flats-bavdhan" className="footer-link" style={{ fontSize: '0.88rem', color: 'var(--text-white-muted)' }}>3 BHK Residences</a></li>
+              <li style={{ marginBottom: '0.75rem' }}><a href="/3.5bhk-flats-bavdhan" className="footer-link" style={{ fontSize: '0.88rem', color: 'var(--text-white-muted)' }}>3.5 BHK Residences</a></li>
+              <li style={{ marginBottom: '0.75rem' }}><a href="/luxury-projects-bavdhan" className="footer-link" style={{ fontSize: '0.88rem', color: 'var(--text-white-muted)' }}>Luxury Projects</a></li>
+              <li style={{ marginBottom: '0.75rem' }}><a href="/sports-township-pune" className="footer-link" style={{ fontSize: '0.88rem', color: 'var(--text-white-muted)' }}>Sports Township</a></li>
+            </ul>
+          </div>
+
+          {/* Experience */}
+          <div>
+            <h4 style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: '1.25rem' }}>Experience</h4>
+            <ul style={{ listStyle: 'none', padding: 0 }}>
+              <li style={{ marginBottom: '0.75rem' }}><a href="/michael-phelps-academy-pune" className="footer-link" style={{ fontSize: '0.88rem', color: 'var(--text-white-muted)' }}>Phelps Swimming</a></li>
+              <li style={{ marginBottom: '0.75rem' }}><a href="/ms-dhoni-academy-pune" className="footer-link" style={{ fontSize: '0.88rem', color: 'var(--text-white-muted)' }}>Tagda Raho Center</a></li>
+              <li style={{ marginBottom: '0.75rem' }}><a href="/football-academy-pune" className="footer-link" style={{ fontSize: '0.88rem', color: 'var(--text-white-muted)' }}>Football Academy</a></li>
+              <li style={{ marginBottom: '0.75rem' }}><a href="/sitemap.xml" className="footer-link" style={{ fontSize: '0.88rem', color: 'var(--accent)' }}>Digital Sitemap</a></li>
+            </ul>
+          </div>
+
           {/* Link columns */}
           {footerLinks.map((col) => (
             <div key={col.title}>
