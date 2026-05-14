@@ -265,17 +265,29 @@ async function dispatchLead(data: Record<string, unknown>) {
     user_agent: navigator.userAgent,
   };
 
-  // Layer 1: Google Sheets / CRM Mirror
+  // Layer 1: Google Apps Script Sovereign Webhook (with Exponential Backoff Retry)
   if (WEBHOOK_URL) {
-    try {
-      await fetch(WEBHOOK_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(hardenedData)
-      });
-    } catch (err) {
-      console.error('Webhook failed:', err);
+    const maxRetries = 3;
+    let attempt = 0;
+    let success = false;
+
+    while (attempt < maxRetries && !success) {
+      try {
+        await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(hardenedData)
+        });
+        success = true; // no-cors doesn't give a reliable status, but if fetch doesn't throw, network was okay
+      } catch (err) {
+        attempt++;
+        console.error(`Webhook failed on attempt ${attempt}. Retrying...`, err);
+        if (attempt < maxRetries) {
+          // Wait 1s, then 2s, then 4s
+          await new Promise(resolve => setTimeout(resolve, 1000 * Math.pow(2, attempt - 1)));
+        }
+      }
     }
   }
 
