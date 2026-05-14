@@ -292,7 +292,8 @@ async function dispatchLead(data: Record<string, unknown>) {
       body: JSON.stringify({
         ...hardenedData,
         _subject: "New High-Intent Lead | Legend County Bavdhan",
-        _template: "table"
+        _template: "table",
+        _captcha: "false"
       })
     });
   } catch (err) { 
