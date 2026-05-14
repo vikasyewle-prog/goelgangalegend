@@ -29,8 +29,19 @@ export default function EnquiryModal() {
     dispatchLead(leadData);
 
     // Email Mirror Fallback
-    const mailSubject = encodeURIComponent(`Modal Enquiry — ${formData.name}`);
-    const mailBody = encodeURIComponent(`Name: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nInterest: ${formData.interest}`);
+    const mailSubject = encodeURIComponent(`LEGEND COUNTY: Modal Enquiry from ${formData.name}`);
+    const mailBody = encodeURIComponent(
+      `NEW MODAL LEAD\n` +
+      `-----------------\n` +
+      `Project: Goel Ganga Legend County\n` +
+      `Name: ${formData.name}\n` +
+      `Phone: ${formData.phone}\n` +
+      `Email: ${formData.email}\n` +
+      `Interest: ${formData.interest}\n` +
+      `-----------------\n` +
+      `Captured via: Enquiry Modal\n` +
+      `Sent to: propsmartrealty@gmail.com`
+    );
     const mailLink = document.createElement('a');
     mailLink.href = `mailto:propsmartrealty@gmail.com?subject=${mailSubject}&body=${mailBody}`;
     mailLink.style.display = 'none';

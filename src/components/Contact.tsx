@@ -52,11 +52,20 @@ export default function Contact() {
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${waMsg}`, '_blank');
 
     // ─── Layer 3: Email Mirror (mailto fallback) ───
-    const mailSubject = encodeURIComponent(`Legend County Enquiry — ${formData.name}`);
+    const mailSubject = encodeURIComponent(`LEGEND COUNTY: New Enquiry from ${formData.name}`);
     const mailBody = encodeURIComponent(
-      `Name: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nConfig: ${formData.config}\nMessage: ${formData.message}`
+      `NEW LEAD CAPTURED\n` +
+      `-----------------\n` +
+      `Project: Goel Ganga Legend County\n` +
+      `Name: ${formData.name}\n` +
+      `Phone: ${formData.phone}\n` +
+      `Email: ${formData.email}\n` +
+      `Configuration: ${formData.config}\n` +
+      `Message: ${formData.message}\n` +
+      `-----------------\n` +
+      `Captured via: Contact Form\n` +
+      `Sent to: propsmartrealty@gmail.com`
     );
-    // Hidden iframe trigger for mailto
     const mailLink = document.createElement('a');
     mailLink.href = `mailto:propsmartrealty@gmail.com?subject=${mailSubject}&body=${mailBody}`;
     mailLink.style.display = 'none';

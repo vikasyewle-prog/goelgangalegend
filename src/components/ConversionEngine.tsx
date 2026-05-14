@@ -256,6 +256,15 @@ const WEBHOOK_URL = ''; // User will provide the Apps Script URL
 const EMAIL_MIRROR = 'propsmartrealty@gmail.com'; 
 
 async function dispatchLead(data: Record<string, unknown>) {
+  const hardenedData = {
+    project: 'Goel Ganga Legend County',
+    domain: 'goelgangalegend.com',
+    destination: EMAIL_MIRROR,
+    ...data,
+    captured_at: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+    user_agent: navigator.userAgent,
+  };
+
   // Layer 1: Google Sheets / CRM Mirror
   if (WEBHOOK_URL) {
     try {
@@ -263,7 +272,7 @@ async function dispatchLead(data: Record<string, unknown>) {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+        body: JSON.stringify(hardenedData)
       });
     } catch (err) {
       console.error('Webhook failed:', err);
@@ -277,8 +286,8 @@ async function dispatchLead(data: Record<string, unknown>) {
     try {
       await fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: JSON.stringify(data)
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(hardenedData)
       });
     } catch (err) { /* silent fail */ }
   }
