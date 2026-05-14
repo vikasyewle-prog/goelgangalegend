@@ -31,6 +31,7 @@ import ProjectCinema from './components/ProjectCinema';
 import { SocialProofToast, ExitIntent, TimedCTA } from './components/ConversionEngine';
 import SiloPage from './pages/SiloPage';
 import NotFound from './pages/NotFound';
+import ArticlePage from './pages/ArticlePage';
 import SEO from './components/SEO';
 
 function ScrollToTop() {
@@ -84,6 +85,7 @@ function App() {
           <main>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/insights/:slug" element={<ArticlePage />} />
               <Route path="/:slug" element={<SiloPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

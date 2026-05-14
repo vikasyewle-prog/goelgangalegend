@@ -106,4 +106,16 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Editorial Insights (MOFU) -->
+  <url>
+    <loc>https://goelgangalegend.com/insights/bavdhan-real-estate-investment-2026</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://goelgangalegend.com/hero-aerial.png</image:loc>
+      <image:title>Is Bavdhan the Best Real Estate Investment in Pune for 2026?</image:title>
+    </image:image>
+  </url>
 </urlset>
